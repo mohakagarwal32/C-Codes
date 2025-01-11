@@ -8,7 +8,7 @@ class Queue {
 	public:
 	Queue() {
 		size = 0;
-		queue = new int[size];
+		queue = new int[100];
 	}
 	void remove() { 
 		if (size == 0) { 
@@ -36,7 +36,19 @@ class Queue {
 		queue[size] = x;
 		size++;
 	}
-	
+	Queue operator+(Queue &q){
+		Queue q3;
+		int i;
+		for(i=0; i<this->size; i++){
+			q3.queue[i] = this->queue[i];
+		}
+		q3.size = i;
+		for(i=0; i<q.size; i++){
+			q3.queue[q3.size] = q.queue[i];
+			q3.size++;
+		}
+		return q3;
+	}
 }; 
 
 int main() { 
