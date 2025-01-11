@@ -8,7 +8,7 @@ class Queue {
 	public:
 	Queue() {
 		size = 0;
-		queue = new int[100];
+		queue = new int[size];
 	}
 	void remove() { 
 		if (size == 0) { 
